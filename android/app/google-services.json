@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "905440824070",
+    "project_id": "keyword-searcher-332d7",
+    "storage_bucket": "keyword-searcher-332d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905440824070:android:81e9aed5c2dfaf2068ec87",
+        "android_client_info": {
+          "package_name": "com.yunyc.alarmkeyword"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905440824070-9nkg78fl5i1l813e0h9f6vd47p2b0o2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXhSUC7Se10nglkaEn0D__BCuwCfqiD2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905440824070-9nkg78fl5i1l813e0h9f6vd47p2b0o2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -27,8 +27,6 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
   @override
   void initState() {
     super.initState();
-    print("firebaseToken_login: ");
-    print(widget.firebaseToken);
     _model = LoginButtonModel(context, widget.firebaseToken);
     _model.initAction();
 
@@ -90,7 +88,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/images/illi_4@2x.png',
+                                    'assets/site.jpg',
                                     width: 300,
                                     height: 300,
                                     fit: BoxFit.cover,
@@ -102,7 +100,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Text(
-                                          'Header One',
+                                          '알림 만들기',
                                           style: FlutterFlowTheme.of(context)
                                               .title2
                                               .override(
@@ -123,7 +121,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                                            '크롤링할 사이트 주소와 키워드를 설정하여 알림을 만드세요.',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText2
                                                 .override(
@@ -148,7 +146,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/images/illi_3@2x.png',
+                                    'assets/alarm.jpg',
                                     width: 300,
                                     height: 300,
                                     fit: BoxFit.cover,
@@ -160,7 +158,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Text(
-                                          'Header Two',
+                                          '알림 확인',
                                           style: FlutterFlowTheme.of(context)
                                               .title2
                                               .override(
@@ -181,7 +179,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                                            '사이트에서 새로운 컨텐츠가 게시되면 알림이 울립니다. 알림 탭에서 알림 내용을 확인하세요.',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText2
                                                 .override(
@@ -206,7 +204,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/images/illi_1@2x.png',
+                                    'assets/save.jpg',
                                     width: 300,
                                     height: 300,
                                     fit: BoxFit.cover,
@@ -218,7 +216,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Text(
-                                          'Header Three',
+                                          '알림 관리',
                                           style: FlutterFlowTheme.of(context)
                                               .title2
                                               .override(
@@ -239,7 +237,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                                            '받은 알림 내용은 보관, 삭제를 할 수 있습니다.',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText2
                                                 .override(

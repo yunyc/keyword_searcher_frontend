@@ -75,7 +75,8 @@ class _AlarmScreenState extends State<AlarmScreen> {
           padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            children: [
+            mainAxisAlignment: _alarms.isEmpty ? MainAxisAlignment.center: MainAxisAlignment.start,
+            children: _alarms.isEmpty ? [Center(child: Text('알람이 존재하지 않습니다.'))] : [
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
                 child: ListView.builder(

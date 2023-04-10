@@ -61,9 +61,10 @@ class _SavedNoticeScreenState extends State<SavedNoticeScreen> {
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Column(
+            mainAxisAlignment: _notices.isEmpty ? MainAxisAlignment.center: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
-            children: [
-              ListView.builder(
+            children: _notices.isEmpty ? [Center(child: Text('알림이 존재하지 않습니다.'))]:
+            [ListView.builder(
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,

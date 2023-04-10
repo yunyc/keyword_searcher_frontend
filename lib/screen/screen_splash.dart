@@ -21,9 +21,6 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    print("firebaseToken_SplashScreen");
-    print(widget.firebaseToken);
-
     Timer(
       Duration(seconds: 1),
       () async => {
@@ -68,16 +65,10 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/ff_logo_white.png',
-              width: 140,
-              height: 140,
-              fit: BoxFit.fitHeight,
-            ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
               child: Text(
-                'Welcome to Flutterflow',
+                'Keyword Seacher',
                 style: TextStyle(
                   fontFamily: 'Lexend Deca',
                   color: Colors.white,

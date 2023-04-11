@@ -35,7 +35,7 @@ class AlarmCreateModel {
     final shouldSave = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Save changes?'),
+        title: Text('알람 만들기를 취소하시겠습니까?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(true),
@@ -50,9 +50,8 @@ class AlarmCreateModel {
     );
 
     if (shouldSave == true) {
-      this.saveAlarm(alarm);
+      context.pop();
     }
-    context.pop();
 
     return true;
   }

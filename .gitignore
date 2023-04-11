@@ -45,4 +45,4 @@ app.*.map.json
 
 
 # 커스텀
-/lib/constants/
+/lib/constants

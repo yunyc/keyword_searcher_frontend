@@ -3,6 +3,7 @@ import 'package:alarmkeyword/dto/alarmDTO.dart';
 import 'package:alarmkeyword/dto/noticeDTO.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../dto/savedNoticeDTO.dart';
 import '../dto/userDTO.dart';
 
 part 'rest_api_service.g.dart';
@@ -18,18 +19,24 @@ abstract class RestApiService {
 
   @GET('/notices')
   Future<List<NoticeDTO>> getNotices(@Header("Authorization") String? token,
-                                    @Query('userId') String userId,
-                                    @Query('visiable') bool visiable);
+                                    @Query('userId') String userId);
 
   @PATCH('/notices/{id}')
   Future<void> updateNoticeVisiable(@Path("id") id,
                                     @Header("Authorization") String? token,
                                     @Body() NoticeDTO noticeDTO);
 
-  @PATCH('/notices/{id}')
-  Future<void> updateNoticeSaved(@Path("id") id,
-                                @Header("Authorization") String? token,
-                                @Body() NoticeDTO noticeDTO);
+  @GET('/saved-notices')
+  Future<List<SavedNoticeDTO>> getSavedNotice(@Header("Authorization") String? token,
+                              @Query('userId') String userId);
+
+  @POST('/saved-notices/{id}')
+  Future<void> createSavedNotice(@Path("id") id,
+                                @Header("Authorization") String? token);
+
+  @DELETE('/saved-notices/{id}')
+  Future<void> deleteSavedNotice(@Path("id") id,
+      @Header("Authorization") String? token);
 
 
 

@@ -37,7 +37,7 @@ class _NoticeScreenStateState extends State<NoticeScreen> {
   Future<void> _loadData() async {
     var accessToken = await AuthService.instance.auth0AccessToken;
     var userId = await AuthService.instance.idToken?.userId;
-    final notices = await _restApiService.getNotices(accessToken, userId!, true);
+    final notices = await _restApiService.getNotices(accessToken, userId!);
     setState(() {
       _notices = notices;
     });

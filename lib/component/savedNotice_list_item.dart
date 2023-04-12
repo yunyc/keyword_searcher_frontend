@@ -1,3 +1,5 @@
+
+import 'package:alarmkeyword/dto/savedNoticeDTO.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
@@ -7,18 +9,18 @@ import 'package:webview_flutter/webview_flutter.dart';
 import '../services/auth_service.dart';
 import '../services/rest_api_service.dart';
 
-class NoticeListItem extends StatefulWidget {
-  final NoticeDTO notice;
+class SavedNoticeListItem extends StatefulWidget {
+  final SavedNoticeDTO notice;
   final Future<void> Function() noticeChanged;
 
-  const NoticeListItem({Key? key, required this.notice, required Future<void> Function() this.noticeChanged}) : super(key: key);
+  const SavedNoticeListItem({Key? key, required this.notice, required Future<void> Function() this.noticeChanged}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => NoticeListItemState();
+  State<StatefulWidget> createState() => SavedNoticeListItemState();
 
 }
 
-class NoticeListItemState extends State<NoticeListItem> {
+class SavedNoticeListItemState extends State<SavedNoticeListItem> {
 
   void moveWebView() {
     Navigator.push(
@@ -45,14 +47,10 @@ class NoticeListItemState extends State<NoticeListItem> {
             position: RelativeRect.fromLTRB(position.dx + size.width, position.dy, position.dx + size.width, position.dy),
             items: [
               PopupMenuItem(
-                value: '보관',
-                child: Text('보관'),
-              ),
-              PopupMenuItem(
-                value: '삭제',
-                child: Text('삭제'),
-              ),
-            ],
+              value: '삭제',
+              child: Text('삭제'),
+                ),
+              ]
           ).then((value) async {
             var accessToken = await AuthService.instance.auth0AccessToken;
             final dio = Dio();
@@ -69,8 +67,8 @@ class NoticeListItemState extends State<NoticeListItem> {
                   final dio = Dio();
                   dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
                   RestApiService restApiService = RestApiService(dio);
-                  widget.notice.visiabled = false;
-                  restApiService.updateNoticeVisiable(widget.notice.id, accessToken, widget.notice);
+                  restApiService.deleteSavedNotice(widget.notice.id, accessToken);
+
                   widget.noticeChanged();
 
                 });

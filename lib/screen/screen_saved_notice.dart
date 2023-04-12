@@ -5,7 +5,9 @@ import 'package:alarmkeyword/services/auth_service.dart';
 import 'package:alarmkeyword/services/rest_api_service.dart';
 
 import '../component/appbar.dart';
+import '../component/savedNotice_list_item.dart';
 import '../dto/noticeDTO.dart';
+import '../dto/savedNoticeDTO.dart';
 
 
 
@@ -24,7 +26,7 @@ class _SavedNoticeScreenState extends State<SavedNoticeScreen> {
   final _unfocusNode = FocusNode();
 
   late RestApiService _restApiService;
-  List<NoticeDTO> _notices = [];
+  List<SavedNoticeDTO> _notices = [];
 
   @override
   void initState() {
@@ -37,7 +39,7 @@ class _SavedNoticeScreenState extends State<SavedNoticeScreen> {
   Future<void> _loadData() async {
     var accessToken = await AuthService.instance.auth0AccessToken;
     var userId = await AuthService.instance.idToken?.userId;
-    final notices = await _restApiService.getNotices(accessToken, userId!, true);
+    final notices = await _restApiService.getSavedNotice(accessToken, userId!);
     setState(() {
       _notices = notices;
     });
@@ -71,7 +73,7 @@ class _SavedNoticeScreenState extends State<SavedNoticeScreen> {
                 itemCount: _notices.length,
                 itemBuilder: (BuildContext context, int index) {
                   final notice = _notices[index];
-                  return NoticeListItem(notice: notice, noticeChanged: _loadData);
+                  return SavedNoticeListItem(notice: notice, noticeChanged: _loadData);
                 },
               ),
             ],

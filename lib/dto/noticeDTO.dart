@@ -7,7 +7,6 @@ class NoticeDTO {
   int? id;
   String content;
   String siteUrl;
-  bool saveEnabled;
   bool visiabled;
   DateTime crawledDate;
 
@@ -15,7 +14,6 @@ class NoticeDTO {
     this.id,
     required this.content,
     required this.siteUrl,
-    required this.saveEnabled,
     required this.visiabled,
     required this.crawledDate,
   });
